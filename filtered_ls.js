@@ -15,6 +15,4 @@ fs.readdir(dir, function(err, list) {
       console.log(file);
     }
   });
-  return list;
-
 });

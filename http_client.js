@@ -3,9 +3,6 @@ var http = require('http')
 
 http.get(url, function(res) {
   res.on('data', function(data) {
-    data = data.toString();
-    console.log(data);
+    console.log(data.toString());
   });
-  return res;
-
 });

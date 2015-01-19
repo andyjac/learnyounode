@@ -24,6 +24,6 @@ function httpGet(index) {
   });
 }
 
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < process.argv.length - 2; i++) {
   httpGet(i);
 }

@@ -4,13 +4,12 @@ var url = process.argv[2];
 http.get(url, function(res) {
   var dataStream = [];
 
-  res.on('error', function(error) {
-    console.error('Something went wrong: ' + error);
+  res.on('error', function(err) {
+    console.error('There was a problem processing your request: ' + err);
   });
 
   res.on('data', function(data) {
-     data = data.toString();
-     dataStream.push(data);
+     dataStream.push(data.toString());
   });
 
   res.on('end', function() {
@@ -18,6 +17,6 @@ http.get(url, function(res) {
     console.log(dataStream.length);
     console.log(dataStream);
   });
-  return dataStream;
 
+  return dataStream;
 });

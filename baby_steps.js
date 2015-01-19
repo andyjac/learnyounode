@@ -5,5 +5,5 @@ for (var i  = 2; i < args.length; i ++) {
   result += Number(args[i]);
 }
 
-console.log(result);
-return result;
+return console.log(result);
+
