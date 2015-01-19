@@ -1,7 +1,7 @@
 var fs = require('fs')
     , path = require('path')
     , dir = process.argv[2]
-    , filterStr = process.argv[3] || '';
+    , filterStr = process.argv[3];
 
 fs.readdir(dir, function(err, list) {
   if (err) {
