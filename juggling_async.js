@@ -1,7 +1,8 @@
 var http = require('http')
     , bl = require('bl')
     , content = []
-    , count = 0;
+    , count = 0
+    , numberOfUrls = process.argv.length - 2;
 
 function printContent() {
   for (var i = 0; i < content.length; i++) {
@@ -19,11 +20,11 @@ function httpGet(index) {
       content[index] = data.toString();
       count++;
 
-      if (count === 3) printContent();
+      if (count === numberOfUrls) printContent();
     }));
   });
 }
 
-for (var i = 0; i < process.argv.length - 2; i++) {
+for (var i = 0; i < numberOfUrls; i++) {
   httpGet(i);
 }
