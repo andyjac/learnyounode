@@ -1,5 +1,4 @@
-var net = require('net')
-    , port = process.argv[2];
+var net = require('net') ;
 
 function zeroPad(i) {
   return (i < 10 ? '0' : '') + i;
@@ -19,4 +18,4 @@ var server = net.createServer(function(socket) {
   socket.end(now() + '\n');
 });
 
-server.listen(port);
+server.listen(process.argv[2]);
